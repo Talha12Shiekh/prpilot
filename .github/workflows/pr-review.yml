@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: write # Required for PRPilot to post comments on the PR
+      pull-requests: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
