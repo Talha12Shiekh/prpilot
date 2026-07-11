@@ -1,0 +1,14 @@
+name: "PRPilot"
+description: "AI-powered PR reviewer using static checks and Gemini AI"
+
+inputs:
+  github-token:
+    description: "GitHub Token for posting comments"
+    required: true
+  api-key:
+    description: "Gemini API Key"
+    required: true
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
