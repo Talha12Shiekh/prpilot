@@ -53,7 +53,6 @@ export function TerminalWindow({
   const [done, setDone] = useState(false);
   const [blink, setBlink] = useState(true);
 
-  // Start only when visible
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;

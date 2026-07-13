@@ -1,14 +1,6 @@
-import { LayoutDashboard, Container, Gauge, Bell, Code2, BarChart2, Globe } from "lucide-react";
-
-const items = [
-  { icon: LayoutDashboard, label: "React / Next.js architectural rules" },
-  { icon: Container, label: "Docker and infrastructure analysis" },
-  { icon: Gauge, label: "Performance profiling" },
-  { icon: Bell, label: "Slack & Discord notifications" },
-  { icon: Code2, label: "VS Code extension" },
-  { icon: BarChart2, label: "PR analytics dashboard" },
-  { icon: Globe, label: "Multi-language support" },
-];
+import { Globe } from "lucide-react";
+import { items } from "./FutureSection.data";
+import { FutureCard } from "./FutureCard";
 
 export function FutureSection() {
   return (
@@ -29,24 +21,13 @@ export function FutureSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {items.map((item, i) => {
-            const Icon = item.icon;
-            const color = i % 2 === 0 ? "#ec3750" : "#ff8c37";
-            return (
-              <div
-                key={i}
-                className="rounded-2xl border border-white/8 bg-[#111113] p-5 flex flex-col items-start gap-3 hover:border-white/15 transition-colors text-left"
-              >
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center"
-                  style={{ background: `${color}15`, border: `1px solid ${color}20` }}
-                >
-                  <Icon size={15} style={{ color }} />
-                </div>
-                <span className="text-white/60 text-sm leading-snug">{item.label}</span>
-              </div>
-            );
-          })}
+          {items.map((item, i) => (
+            <FutureCard
+              key={i}
+              item={item}
+              index={i}
+            />
+          ))}
           <div
             className="rounded-2xl border col-span-2 md:col-span-4 p-6 flex flex-col md:flex-row items-start md:items-center gap-4 text-left"
             style={{ background: "linear-gradient(135deg,#ec375010,#ff8c3710)", borderColor: "#ec375030" }}
