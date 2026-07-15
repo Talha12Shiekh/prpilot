@@ -17,8 +17,6 @@ async function run() {
   try {
     core.info('PRPilot is starting...');
 
-    console.log("testing");
-
     const githubToken = core.getInput('github-token', { required: true });
     const apiKey = core.getInput('api-key', { required: true });
 
