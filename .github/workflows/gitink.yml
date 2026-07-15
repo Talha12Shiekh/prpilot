@@ -1,0 +1,21 @@
+name: GitInk PR Auto-Describer
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  describe-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run GitInk Generator
+        uses: Talha12Shiekh/PRSmith@main
+        with:
+          gemini-api-key: ${{ secrets.GEMINI_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
